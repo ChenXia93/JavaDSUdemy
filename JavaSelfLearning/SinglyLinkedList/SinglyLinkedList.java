@@ -4,7 +4,6 @@ public class SinglyLinkedList {
     public Node head;
     public Node tail;
     public int size;
-
     public Node createLinkedList(int nodeData){
         //declare head
         head = new Node();

@@ -15,5 +15,4 @@ public class LLMain {
         cSLL.deleteCSLL(2);
         cSLL.csLLTraversal();
     }
-
 }

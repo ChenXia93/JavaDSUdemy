@@ -7,8 +7,7 @@ public class CharMain {
         boolean flag = checkUpperCase(ch);
         System.out.println(flag);
 
-        boolean digitFlag = isDigit(chDigit);
-        System.out.println(digitFlag);
+        System.out.println(      isDigit(chDigit));
     }
 
     public static boolean checkUpperCase(char ch) {
@@ -19,11 +18,13 @@ public class CharMain {
         }
     }
 
-    public static boolean isDigit(char ch){
+    public static String isDigit(char ch){
+        String str ="";
         if(Character.isDigit(ch)){
-            return true;
+            str ="is Number";
         }else{
-            return false;
+            str ="is not number";
         }
+        return str;
     }
 }

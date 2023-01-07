@@ -75,6 +75,7 @@ public class BinaryArrayClass {
 
     public void delete(String value){
         int location = searchKey(value);
+        System.out.println("location : " + location);
         if(location == -1){
             return;
         }else{

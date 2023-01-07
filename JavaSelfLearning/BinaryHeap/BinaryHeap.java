@@ -4,6 +4,9 @@ public class BinaryHeap {
     int[] arr;
     int sizeOfTree;
 
+    public BinaryHeap(int[] arr){
+        this.arr = arr;
+    }
     //constructor
     public BinaryHeap (int size){
         //size + 1 because we`re not using the index 0
@@ -44,23 +47,32 @@ public class BinaryHeap {
     //always insert at the bottom and then replace element if it validates the binary Heap property
 
     public void heapBottomToTop(int index, String heapType){
+        //get child`s index
         int parent = index / 2;
+        //because index 1 is the root
+        //when recursion reached this point, it returns.
         if(index <= 1){
             return;
         }
+
         if(heapType.equals("Min")){
-            if(arr[index] < arr[parent]){
+            //swap the element up
+            //if arr[index] = 5 < arr[parent]= 10 then swap them, and repeat if there`s more element
+            if(arr[index] < arr[parent]) {
                 int temp = arr[index];
                 arr[index] = arr[parent];
                 arr[parent] = temp;
             }
+
         }else if(heapType.equals("Max")){
+            //swap the element down
             if(arr[index] > arr[parent]){
                 int temp = arr[index];
                 arr[index] = arr[parent];
                 arr[parent] = temp;
             }
         }
+        //recursively
         heapBottomToTop(parent, heapType); // -> o(Log N)
     }
 
@@ -134,4 +146,5 @@ public class BinaryHeap {
             return extractedValue;
         }
     }
+
 }

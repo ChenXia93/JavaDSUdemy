@@ -19,7 +19,7 @@ public class BinaryArrayMain {
         bArr.levelOrder(1);
         System.out.println("Searching str");
         bArr.searchKey("N7");
-        bArr.delete("N3");
+        bArr.delete("N6");
         bArr.levelOrder(1);
     }
 }

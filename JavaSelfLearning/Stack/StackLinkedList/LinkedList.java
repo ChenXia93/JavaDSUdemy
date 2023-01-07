@@ -1,17 +1,17 @@
 package JavaSelfLearning.Stack.StackLinkedList;
 
-import JavaSelfLearning.Node.Node;
+import JavaSelfLearning.SinglyLinkedList.Node;
 
 public class LinkedList {
-    public JavaSelfLearning.Node.Node head;
-    public JavaSelfLearning.Node.Node tail;
+    public JavaSelfLearning.SinglyLinkedList.Node head;
+    public JavaSelfLearning.SinglyLinkedList.Node tail;
     public int size;
 
-    public JavaSelfLearning.Node.Node createLinkedList(int nodeData){
+    public JavaSelfLearning.SinglyLinkedList.Node createLinkedList(int nodeData){
         //declare head
-        head = new JavaSelfLearning.Node.Node();
+        head = new JavaSelfLearning.SinglyLinkedList.Node();
         //declare node
-        JavaSelfLearning.Node.Node node = new JavaSelfLearning.Node.Node();
+        JavaSelfLearning.SinglyLinkedList.Node node = new JavaSelfLearning.SinglyLinkedList.Node();
         //set node next reference to null
         node.next = null;
         //set node value to the incoming value
@@ -30,7 +30,7 @@ public class LinkedList {
     //Inserting linkedlist
     public void insertLinkedList(int value, int position){
         //create a new node
-        JavaSelfLearning.Node.Node node = new JavaSelfLearning.Node.Node();
+        JavaSelfLearning.SinglyLinkedList.Node node = new JavaSelfLearning.SinglyLinkedList.Node();
         //set the node value
         node.data = value;
         //if linked list head is empty
@@ -53,14 +53,14 @@ public class LinkedList {
             tail = node;
         }else{
             //if position is between middle
-            JavaSelfLearning.Node.Node temp = head;
+            JavaSelfLearning.SinglyLinkedList.Node temp = head;
             int i = 0;
             while(i < position - 1){
                 temp = temp.next;
                 i++;
             }
             //set nextNode reference
-            JavaSelfLearning.Node.Node nextNode = temp.next;
+            JavaSelfLearning.SinglyLinkedList.Node nextNode = temp.next;
             temp.next = node;
             node.next = nextNode;
         }
@@ -71,7 +71,7 @@ public class LinkedList {
         if(head == null){
             System.out.println("Linked List does not exist!");
         }else{
-            JavaSelfLearning.Node.Node tempNode = head;
+            JavaSelfLearning.SinglyLinkedList.Node tempNode = head;
             for(int i= 0 ; i <size; i++){
                 System.out.print(tempNode.data);
                 if(i != size -1){
@@ -87,7 +87,7 @@ public class LinkedList {
         if (head == null) {
             System.out.println("Linked list does not exist");
         } else {
-            JavaSelfLearning.Node.Node tempHead = head;
+            JavaSelfLearning.SinglyLinkedList.Node tempHead = head;
             for (int i = 0; i < size; i++) {
                 if (searchValue == tempHead.data) {
                     return true;
@@ -111,7 +111,7 @@ public class LinkedList {
             }
             //deleting from the end
         }else if(pos >= size){
-            JavaSelfLearning.Node.Node tempNode = head;
+            JavaSelfLearning.SinglyLinkedList.Node tempNode = head;
             for(int i = 0; i < size -1; i++){
                 tempNode = tempNode.next;
             }

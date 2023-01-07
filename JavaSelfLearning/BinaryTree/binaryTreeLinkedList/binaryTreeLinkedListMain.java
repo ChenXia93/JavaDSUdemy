@@ -21,6 +21,26 @@ public class binaryTreeLinkedListMain {
         binaryTree.deleteNode("N4");
         binaryTree.levelOrder();
 
+        /*
+
+Successfully inserted root Node
+Successfully inserted
+Successfully inserted
+Successfully inserted
+Successfully inserted
+Successfully inserted
+Successfully inserted
+Successfully inserted
+Successfully inserted
+N1 N2 N3 N4 N5 N6 N7 N8 N9
+Find deepest
+N9
+Deleting deepest Node
+current DeepNode N8
+Node is deleted
+N1 N2 N3 N8 N5 N6 N7
+         */
+
 //        BinaryNode n1 = new BinaryNode();
 //        n1.value = "N1";
 //        BinaryNode n2 = new BinaryNode();

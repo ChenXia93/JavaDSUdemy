@@ -1,6 +1,4 @@
 package JavaSelfLearning.BinaryTree.binaryTreeLinkedList;
-import JavaSelfLearning.Node.Node;
-import Sorting.Person;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -44,9 +42,10 @@ public class BinaryTreeLinkedListClass {
     public void levelOrder(){
         Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(root);
+    //    System.out.println("Root value: " + root.value);
         while(!queue.isEmpty()){
             BinaryNode presentNode = queue.remove();
-            System.out.print(presentNode.value + " ");
+            System.out.print("presentNode " + presentNode.value + " ");
             if(presentNode.leftChild !=null){
                 queue.add(presentNode.leftChild);
             }

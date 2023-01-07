@@ -14,10 +14,7 @@ public class BinarySearchTreeClass {
     //insert Method
     private BinaryNode insert(BinaryNode currentNode, int value) {
         if (currentNode == null) {
-            BinaryNode newNode = new BinaryNode();
-            newNode.value = value;
-            System.out.println("Successfully inserted");
-            return newNode;
+            return new BinaryNode(value);
         } else if (value <= currentNode.value) {
             currentNode.leftChild = insert(currentNode.leftChild, value);
             return currentNode;
@@ -96,32 +93,59 @@ public class BinarySearchTreeClass {
         }
     }
 
-    public BinaryNode deleteNode(BinaryNode root, int value){
-        if(root == null){
-            System.out.println("Not Found");
+    public static BinaryNode maxNode(BinaryNode root){
+        if(root.rightChild == null){
+            return root;
+        }else{
+            return maxNode(root.rightChild);
         }
+    }
+    public BinaryNode deleteNode(BinaryNode root, int value){
+        assert root != null;
         if(value < root.value){
             root.leftChild = deleteNode(root.leftChild, value);
         }else if(value > root.value){
             root.rightChild = deleteNode(root.rightChild, value);
         }else{
             //when node has two children
+            //left and right not null: means theres two children
+             /*
+                        30 : deleting a node with two children
+                       /  \
+                    20     40
+              */
             if(root.leftChild !=null && root.rightChild !=null){
+                //create temp of root
                 BinaryNode temp = root;
                 //find minimum from right
                 BinaryNode minNodeForRight = minNode(temp.rightChild);
+                //set minimum set to root
                 root.value = minNodeForRight.value;
+                //get right to null
                 root.rightChild = deleteNode(root.rightChild, minNodeForRight.value);
             }else if(root.leftChild !=null){
+                //only left child
+                //link the root to the leftChild
+                /*
+                        40 : new root
+                       /  \
+                    20     null
+                 */
                 root = root.leftChild;
             }else if(root.rightChild !=null){
+                //only right child
+                //link the root to the rightChild
+                /*
+                        40 : new root
+                       /  \
+                    20     null
+                 */
                 root = root.rightChild;
             }else{
-                root = null;
+                root= null;
             }
         }
         return root;
     }
-
 }
 
